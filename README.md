@@ -183,7 +183,33 @@ rateLimiter.tryAcquire(); // bloqueia até poder continuar
 
 ---
 
-## 📌 Melhorias Futuras
+## 📘 Documentação Técnica
+### 📌 Visão Geral
+Esta aplicação foi desenvolvida com o objetivo de integrar um sistema backend com a API do HubSpot, utilizando OAuth 2.0 (Authorization Code Flow), criação de contatos e recebimento de notificações via Webhook.
 
-- 📊 Monitoramento de rate limit
-- 🧪 Cobertura total com testes
+### 🧠 Decisões Técnicas
+1. Framework: Spring Boot
+   - Escolha por ser o framework mais consolidado no ecossistema Java para construção de APIs REST.
+   - Permite rápida configuração, suporte a segurança, injeção de dependências e testes.
+2. FeignClient (Spring Cloud OpenFeign)
+   - Utilizado para abstrair e facilitar chamadas HTTP para a API do HubSpot.
+   - Melhora a legibilidade, reutilização e testabilidade de código em relação ao uso direto de RestTemplate ou WebClient.
+4. Controle de Rate Limit
+   - Rate limiter com Google Guave, respeitando a política do HubSpot de 110 requisições a cada 10 segundos.
+   - Previne erros HTTP 429 (Too Many Requests) de forma transparente para o consumidor da API.
+
+### 📦 Bibliotecas Utilizadas
+
+| Lib                      | Uso                                                              |
+|--------------------------|------------------------------------------------------------------|
+| `Spring Boot`            | Framework base da aplicação                                      |
+| `Spring Cloud OpenFeign` | Comunicação HTTP com API do HubSpot                              |
+| `Google Guava`           | Controle de taxa de requisições (rate limit)                     |
+| `Lombok`                 | Redução de boilerplate com geração automática de getters/setters |
+| `H2`                     | Banco de dados                                                   |
+
+### 📌 Melhorias Futuras
+
+-  Monitoramento de rate limit
+-  Cobertura total com testes
+-  Implementação de cache para evitar chamadas desnecessárias à API do HubSpot.
