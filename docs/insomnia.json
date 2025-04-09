@@ -1,0 +1,334 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2025-04-09T21:58:31.995Z",
+  "__export_source": "insomnia.desktop.app:v2023.5.8",
+  "resources": [
+    {
+      "_id": "req_0e4b7f29a9e84f318c080e009c6d59dc",
+      "parentId": "fld_a11a70ba5a8545088f6535781c6b9c04",
+      "modified": 1744177239901,
+      "created": 1744177159702,
+      "url": "{{ _.url }}/api/auth/authorize-url",
+      "name": "Authorize URL",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "User-Agent",
+          "value": "insomnia/2023.5.8"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1744177159702,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_a11a70ba5a8545088f6535781c6b9c04",
+      "parentId": "wrk_5e76cdfb25b6410aaf8dbb1b33a81f5f",
+      "modified": 1744199564214,
+      "created": 1744177044563,
+      "name": "Auth",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1744177044763,
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_5e76cdfb25b6410aaf8dbb1b33a81f5f",
+      "parentId": null,
+      "modified": 1744177025594,
+      "created": 1744177025594,
+      "name": "CRM HubSpot",
+      "description": "",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_49528c3838e24cd98799336579636087",
+      "parentId": "fld_a11a70ba5a8545088f6535781c6b9c04",
+      "modified": 1744178549584,
+      "created": 1744178457396,
+      "url": "{{ _.url }}/api/auth/callback",
+      "name": "Callback",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "id": "pair_697424b3a1fb49fba99ab801dc870fd7",
+          "name": "code",
+          "value": "9dfc8f9a-9d39-4afc-b0b4-925569803c61",
+          "description": ""
+        }
+      ],
+      "headers": [
+        {
+          "name": "User-Agent",
+          "value": "insomnia/2023.5.8"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1744129563476.5,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_63cf44e86fc6401b8b4a9b842399a4e0",
+      "parentId": "fld_a11a70ba5a8545088f6535781c6b9c04",
+      "modified": 1744200236251,
+      "created": 1744200137463,
+      "url": "{{ _.url }}/api/auth/refresh-token",
+      "name": "Refresh Token",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "id": "pair_697424b3a1fb49fba99ab801dc870fd7",
+          "name": "refreshToken",
+          "value": "{{ _.refresh_token }}",
+          "description": ""
+        }
+      ],
+      "headers": [
+        {
+          "name": "User-Agent",
+          "value": "insomnia/2023.5.8"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1744105765363.75,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_be9058571c3a4a258b0f0b07ab155044",
+      "parentId": "fld_a11a70ba5a8545088f6535781c6b9c04",
+      "modified": 1744229115068,
+      "created": 1744229068381,
+      "url": "{{ _.url }}/api/auth/last-token",
+      "name": "GET Last Token",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "User-Agent",
+          "value": "insomnia/2023.5.8"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1744093866307.375,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_ca6516820a0f4464817f663a0b006d83",
+      "parentId": "fld_baa19468fb4e44c387ff15da1107f945",
+      "modified": 1744230623635,
+      "created": 1744199582778,
+      "url": "{{ _.url }}/api/contact",
+      "name": "Create",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"properties\": {\n\t\t\"email\": \"teste3@teste.com\",\n\t\t\"firstname\": \"Teste\",\n\t\t\"lastname\": \"Teste 3\",\n\t\t\"phone\": \"(99) 99999-9999\"\n\t}\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "User-Agent",
+          "value": "insomnia/2023.5.8"
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.access_token }}"
+      },
+      "metaSortKey": -1744188363919.5,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_baa19468fb4e44c387ff15da1107f945",
+      "parentId": "wrk_5e76cdfb25b6410aaf8dbb1b33a81f5f",
+      "modified": 1744199562205,
+      "created": 1744199540892,
+      "name": "Contact",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1744177044663,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_2a4d32ecdafb46a3a276eb5170247232",
+      "parentId": "fld_baa19468fb4e44c387ff15da1107f945",
+      "modified": 1744235884775,
+      "created": 1744201636975,
+      "url": "{{ _.url }}/api/contact",
+      "name": "List Contacts",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "id": "pair_fbb691cca52e4649978c8c2b9eb3960b",
+          "name": "limit",
+          "value": "10",
+          "description": ""
+        }
+      ],
+      "headers": [
+        {
+          "name": "User-Agent",
+          "value": "insomnia/2023.5.8"
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.access_token }}"
+      },
+      "metaSortKey": -1744188363819.5,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_06d07c1c9ef24fba92838e2405a89c4a",
+      "parentId": "fld_baa19468fb4e44c387ff15da1107f945",
+      "modified": 1744205448081,
+      "created": 1744205418601,
+      "url": "{{ _.url }}/api/contact/112655386461",
+      "name": "GET Contact",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "User-Agent",
+          "value": "insomnia/2023.5.8"
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ _.access_token }}"
+      },
+      "metaSortKey": -1744182761760.75,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "env_1a2749d454834a96ea990f482b137074ab7e87ef",
+      "parentId": "wrk_5e76cdfb25b6410aaf8dbb1b33a81f5f",
+      "modified": 1744177081707,
+      "created": 1744177025666,
+      "name": "Base Environment",
+      "data": {},
+      "dataPropertyOrder": {},
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1744177025667,
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_1a2749d454834a96ea990f482b137074ab7e87ef",
+      "parentId": "wrk_5e76cdfb25b6410aaf8dbb1b33a81f5f",
+      "modified": 1744177371221,
+      "created": 1744177025685,
+      "name": "Default Jar",
+      "cookies": [
+        {
+          "key": "JSESSIONID",
+          "value": "60A79D48400287E97EF906F824B21458",
+          "domain": "localhost",
+          "path": "/",
+          "httpOnly": true,
+          "hostOnly": true,
+          "creation": "2025-04-09T05:40:49.794Z",
+          "lastAccessed": "2025-04-09T05:42:51.221Z",
+          "id": "5657893727038004"
+        }
+      ],
+      "_type": "cookie_jar"
+    },
+    {
+      "_id": "env_f874426ac5654088be7d5410bf863ac6",
+      "parentId": "env_1a2749d454834a96ea990f482b137074ab7e87ef",
+      "modified": 1744230113453,
+      "created": 1744177090091,
+      "name": "Local",
+      "data": {
+        "url": "https://f866-177-223-76-7.ngrok-free.app",
+        "url2": "http://localhost:8080",
+        "access_token": "CKrqyeLhMhIHAAEAQAAAARjYl9YXIOeT4iUot8yHBTIUHt7HFkdd1hy0TXJx5mOkPQ0XuTc6MAAAAEEAAAAAAAAAAAAAAAAAgAAAAAAAAAAAACAAAAAAAOABAAAAAAAAAAAAAAAQAkIU5S5dGRUSJFd4teoeAoKiKWANNoBKA25hMVIAWgBgAGjnk-IlcAA",
+        "refresh_token": "na1-37cc-b6e1-4269-82bb-8fe9887f4265"
+      },
+      "dataPropertyOrder": {
+        "&": [
+          "url",
+          "url2",
+          "access_token",
+          "refresh_token"
+        ]
+      },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1744177090091,
+      "_type": "environment"
+    }
+  ]
+}
