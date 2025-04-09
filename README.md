@@ -26,27 +26,6 @@ Aplicação Spring Boot 3.4.4 com Java 21 para integração avançada com a API 
 
 ---
 
-## 🛠️ Configuração Rápida
-
-### 1. Clone o repositório
-```bash
-git clone https://github.com/guilhermesagaz/crm-hubspot-integration.git
-cd crm-hubspot
-
-## 🛠️ Configuração
-
-### 2. Configure o ambiente
-Crie um arquivo `.env` na raiz:
-
-```ini
-# HubSpot OAuth
-HUBSPOT_CLIENT_ID=seu-client-id
-HUBSPOT_CLIENT_SECRET=seu-client-secret
-HUBSPOT_REDIRECT_URI=https://f866-177-223-76-7.ngrok-free.app/api/auth/callback
-```
-
----
-
 ## ✨ Funcionalidades
 
 - Geração da URL de autorização OAuth2.
@@ -64,8 +43,8 @@ HUBSPOT_REDIRECT_URI=https://f866-177-223-76-7.ngrok-free.app/api/auth/callback
 1. Clone o repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/crm-hubspot.git
-cd crm-hubspot
+git clone https://github.com/guilhermesagaz/crm-hubspot-integration.git
+cd crm-hubspot-integration
 ```
 
 2. Configure as variáveis de ambiente necessárias:
